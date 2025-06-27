@@ -1,7 +1,7 @@
 services:
   - type: cron
-    name: abridor-ge
-    schedule: "*/5 * * * *"
+    name: agendador_execucao 
+    schedule: "0 22 * * *"
     runtime: python
     buildCommand: ""
     startCommand: "python contador.py"
