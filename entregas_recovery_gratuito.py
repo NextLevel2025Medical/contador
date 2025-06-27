@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
 
-LOG_PATH = "Entregas Plastic .txt"
+LOG_PATH = "Entregas Recovery .txt"
 
 def escreve_log(msg):
     timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
@@ -14,6 +14,9 @@ def escreve_log(msg):
     print(linha)
     with open(LOG_PATH, "a", encoding="utf-8") as log:
         log.write(linha + "\n")
+
+# 🔹 Mensagem inicial
+escreve_log("🚚 Entrega Recovery sendo Realizada")
 
 def extrair_e_ativar_aulas(driver, vitrine_id, nome_vitrine):
     escreve_log(f"\n🔎 Buscando aulas da vitrine {vitrine_id} – {nome_vitrine}")
