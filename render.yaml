@@ -3,5 +3,5 @@ services:
     name: agendador_execucao 
     schedule: "*/5 * * * *"
     runtime: python
-    buildCommand: ""
+    buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 entregas_business_gratuito.py && python3 entregas_plastic_gratuito.py && python3 entregas_recovery_gratuito.py"
