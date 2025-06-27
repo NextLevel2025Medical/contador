@@ -1,6 +1,6 @@
 services:
   - type: cron
-    name: agendador_execucao 
+    name: agendador_execucao
     schedule: "*/5 * * * *"
     runtime: python
     buildCommand: "pip install -r requirements.txt"
