@@ -1,4 +1,4 @@
-eservices:
+services:
   - type: cron
     name: agendador_execucao 
     schedule: "*/5 * * * *"
