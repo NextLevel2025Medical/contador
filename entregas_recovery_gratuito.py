@@ -98,7 +98,6 @@ try:
     
     # Processar as vitrines
     extrair_e_ativar_aulas(driver, "96527", "The One Hour Learning League Recovery")
-    extrair_e_ativar_aulas(driver, "75856", "The One Hour Learning League Business")
 
     # Clicar no botão "Salvar Alterações"
     try:
