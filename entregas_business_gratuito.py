@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
+import requests  # ✅ para a requisição API
 
 LOG_PATH = "Entregas Plastic .txt"
 
@@ -14,6 +15,9 @@ def escreve_log(msg):
     print(linha)
     with open(LOG_PATH, "a", encoding="utf-8") as log:
         log.write(linha + "\n")
+
+# 🔹 Mensagem inicial
+escreve_log("🚚 Entrega Business sendo Realizada")
 
 def extrair_e_ativar_aulas(driver, vitrine_id, nome_vitrine):
     escreve_log(f"\n🔎 Buscando aulas da vitrine {vitrine_id} – {nome_vitrine}")
@@ -64,7 +68,7 @@ def extrair_e_ativar_aulas(driver, vitrine_id, nome_vitrine):
 
 # --- CONFIGURAÇÃO DO CHROME ---
 chrome_options = Options()
-chrome_options.add_argument("--headless=new")  # Executa sem mostrar o navegador
+chrome_options.add_argument("--headless=new")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--window-size=1920,1080")
 chrome_options.add_argument("--no-sandbox")
@@ -113,3 +117,19 @@ except Exception as e:
 finally:
     driver.quit()
     escreve_log("🛑 Navegador fechado. Processo encerrado.")
+
+    # 🔹 Requisição API ao final
+    try:
+        escreve_log("📡 Enviando requisição para BotConversa...")
+        response = requests.post(
+            "https://backend.botconversa.com.br/api/v1/webhook/subscriber/759574367/send_flow/",
+            headers={
+                "accept": "application/json",
+                "API-KEY": "282cefd5-e37b-47ff-94d0-ec264b196f6e",
+                "Content-Type": "application/json"
+            },
+            json={"flow": 7479694}
+        )
+        escreve_log(f"✅ Resposta API: {response.status_code} - {response.text}")
+    except Exception as e:
+        escreve_log(f"❌ Erro ao enviar requisição API: {e}")
