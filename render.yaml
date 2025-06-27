@@ -1,7 +1,7 @@
 services:
   - type: cron
     name: agendador_execucao
-    schedule: "*/5 * * * *"
+    schedule: "0 22 * * *"
     runtime: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 entregas_business_gratuito.py && python3 entregas_plastic_gratuito.py && python3 entregas_recovery_gratuito.py"
