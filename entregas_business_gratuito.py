@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
 import requests  # ✅ para a requisição API
 
-LOG_PATH = "Entregas Plastic .txt"
+LOG_PATH = "Entregas Business .txt"
 
 def escreve_log(msg):
     timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
