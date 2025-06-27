@@ -15,6 +15,9 @@ def escreve_log(msg):
     with open(LOG_PATH, "a", encoding="utf-8") as log:
         log.write(linha + "\n")
 
+# 🔹 Mensagem inicial
+escreve_log("🚚 Entrega Plastic sendo Realizada")
+
 def extrair_e_ativar_aulas(driver, vitrine_id, nome_vitrine):
     escreve_log(f"\n🔎 Buscando aulas da vitrine {vitrine_id} – {nome_vitrine}")
 
