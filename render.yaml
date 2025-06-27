@@ -4,4 +4,4 @@ eservices:
     schedule: "*/5 * * * *"
     runtime: python
     buildCommand: ""
-    startCommand: "entregas_business_gratuito.py", "entregas_plastic_gratuito.py", "entregas_recovery_gratuito.py"
+    startCommand: "python3 entregas_business_gratuito.py && python3 entregas_plastic_gratuito.py && python3 entregas_recovery_gratuito.py"
