@@ -1,7 +1,7 @@
-services:
+eservices:
   - type: cron
     name: agendador_execucao 
     schedule: "*/5 * * * *"
     runtime: python
     buildCommand: ""
-    startCommand: "Entregas - Business Gratuito.py", "Entregas - Plastic Gratuito.py", "Entregas - Recovery Gratuito.py"
+    startCommand: "entregas_business_gratuito.py", "entregas_plastic_gratuito.py", "entregas_recovery_gratuito.py"
