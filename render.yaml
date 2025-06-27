@@ -4,4 +4,4 @@ services:
     schedule: "0 22 * * *"
     runtime: python
     buildCommand: ""
-    startCommand: "Entregas - Business Gratuito.py"
+    startCommand: "Entregas - Business Gratuito.py", "Entregas - Plastic Gratuito.py", "Entregas - Recovery Gratuito.py"
